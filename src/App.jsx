@@ -37,7 +37,6 @@ function App() {
     const Keys = Object.keys(newCanRender)
     let newObject = {...newCanRender}
     Keys.forEach((key, index) => {
-      console.log('esse', newCanRender[key]?.isFilled)
       if(index === 0){
         newObject[key] = {
           canRender: true,
@@ -46,7 +45,6 @@ function App() {
       }else{
         const render = newObject[Keys[index - 1]]?.canRender === true &&
           newObject[Keys[index - 1]]?.isFilled === true
-        console.log('dentro do else', render, newObject[Keys[index - 1]] )
           newObject[key] = {
             canRender: render,
             isFilled: newObject[key]?.isFilled
