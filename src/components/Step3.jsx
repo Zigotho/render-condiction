@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export const Step3 = ({canRender}) => {
+export const Step3 = ({canRender, isFilled}) => {
   const [value, setValue] = React.useState("")
+
+  useEffect(() => {
+    if(value !== ''){
+      isFilled('step3', true)
+    }else{
+      isFilled('step3', false)
+    }
+  },[value])
 
   if (!canRender) {
     return null
